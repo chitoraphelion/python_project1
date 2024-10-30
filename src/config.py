@@ -1,18 +1,18 @@
 from math import tan, atan, pi
 
-#Конфигурация окна
-WIDTH = 1200
-HEIGHT = 800
-BACKGROUND_COLOR = (0, 0, 0)
-LINE_COLOR = (255, 255, 255)
-FPS = 60
+# Конфигурация окна
+WIDTH: int = 1200
+HEIGHT: int = 800
+BACKGROUND_COLOR: tuple[int, int, int] = (0, 0, 0)
+LINE_COLOR: tuple[int, int, int] = (255, 255, 255)
+FPS: int = 60
 
-#Параметры камеры
-HVA = tan((120 * (pi / 180)) / 2)
-VVA = HVA * HEIGHT / WIDTH
+# Параметры камеры
+HVA: float = tan((120 * (pi / 180)) / 2)
+VVA: float = HVA * HEIGHT / WIDTH
 
-HVA_angle = 120 * (pi / 180)
-VVA_angle = 2 * atan(VVA)
+HVA_angle: float = 120 * (pi / 180)
+VVA_angle: float = 2 * atan(VVA)
 
-NEAR = .1
-FAR = 100
+NEAR: float = 0.1
+FAR: float = 100.0

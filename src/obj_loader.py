@@ -1,6 +1,14 @@
 import numpy as np
+from typing import Tuple
 
-def parse_obj(file_path, scale):
+def parse_obj(file_path: str, scale: float) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Парсит .obj файл, извлекает вершины и грани и масштабирует вершины.
+
+    :param file_path: Путь к .obj файлу
+    :param scale: Коэффициент масштабирования для вершин
+    :return: Кортеж из двух numpy массивов — массив вершин и массив граней
+    """
     vertices = []
     faces = []
 

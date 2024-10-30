@@ -1,6 +1,6 @@
 import numpy as np
 import pygame
-from math import radians
+from typing import List
 
 from object import Object
 from transformations import rot_x, rot_y, rot_z
@@ -16,9 +16,9 @@ pygame.font.init()
 font = pygame.font.Font(None, 36)
 clock = pygame.time.Clock()
 
-# Инициализация камеры
-scale = 1
-camera = Camera(position=[-5, -5, 0])
+# Инициализация камеры и объекта
+scale = 1.0
+camera = Camera(position=[-5.0, -5.0, 0.0])
 object = Object('assets/guitar.obj', scale)
 
 running = True
@@ -35,27 +35,27 @@ while running:
 
     # Управление камерой (WASD для перемещения, QE для подъема/спуска)
     if keys[pygame.K_w]:
-        camera.move(forward_back = 1, left_right = 0, up_down = 0)
+        camera.move(forward_back=1, left_right=0, up_down=0)
     if keys[pygame.K_s]:
-        camera.move(forward_back = -1, left_right = 0, up_down = 0)
+        camera.move(forward_back=-1, left_right=0, up_down=0)
     if keys[pygame.K_a]:
-        camera.move(forward_back = 0, left_right = -1, up_down = 0)
+        camera.move(forward_back=0, left_right=-1, up_down=0)
     if keys[pygame.K_d]:
-        camera.move(forward_back = 0, left_right = 1, up_down = 0)
+        camera.move(forward_back=0, left_right=1, up_down=0)
     if keys[pygame.K_q]:
-        camera.move(forward_back = 0, left_right = 0, up_down = -1)
+        camera.move(forward_back=0, left_right=0, up_down=-1)
     if keys[pygame.K_e]:
-        camera.move(forward_back = 0, left_right = 0, up_down = 1)
+        camera.move(forward_back=0, left_right=0, up_down=1)
 
     # Управление поворотом камеры (стрелки)
     if keys[pygame.K_UP]:
-        camera.rotate(up_down = -1, left_right = 0)
+        camera.rotate(up_down=-1, left_right=0)
     if keys[pygame.K_DOWN]:
-        camera.rotate(up_down = 1, left_right = 0)
+        camera.rotate(up_down=1, left_right=0)
     if keys[pygame.K_LEFT]:
-        camera.rotate(up_down = 0, left_right = -1)
+        camera.rotate(up_down=0, left_right=-1)
     if keys[pygame.K_RIGHT]:
-        camera.rotate(up_down = 0, left_right = 1)
+        camera.rotate(up_down=0, left_right=1)
 
     # Отрисовка объекта
     x_pygame, y_pygame = pygame_coordinates(object.vertices, camera)
