@@ -1,11 +1,7 @@
-import numpy as np
 import pygame
-from typing import List
 
 from object import Object
-from transformations import rot_x, rot_y, rot_z
 from camera import Camera
-from obj_loader import parse_obj
 from rendering import draw_object, pygame_coordinates
 from config import *
 

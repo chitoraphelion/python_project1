@@ -1,6 +1,6 @@
 import numpy as np
 import pygame
-from math import tan
+
 from camera import Camera
 from object import Object
 from config import *

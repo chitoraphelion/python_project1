@@ -1,6 +1,5 @@
 import numpy as np
 from math import sin, cos
-from typing import Any
 
 def rot_x(angle: float) -> np.ndarray:
     """

@@ -1,7 +1,6 @@
 import numpy as np
 from obj_loader import parse_obj
 from transformations import rot_x, rot_y, rot_z
-from typing import Tuple
 
 class Object:
     def __init__(self, path: str, scale: float):
