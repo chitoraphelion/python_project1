@@ -1,9 +1,9 @@
 import pygame
 
-from object import Object
-from camera import Camera
-from rendering import draw_object, pygame_coordinates
-from config import *
+from object.object import Object
+from camera.camera import Camera
+from support_files.rendering import draw_object, pygame_coordinates
+from support_files.config import *
 
 # Инициализация Pygame и экрана
 pygame.init()
